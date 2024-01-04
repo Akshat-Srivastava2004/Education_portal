@@ -1,0 +1,68 @@
+{% extends 'teacher/base.html' %}
+{% load static %}
+{% block mainbody %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Meeting Link</h1>
+        <form id="meetingForm" method="post">
+            {% csrf_token %}
+            <label for="meetingLink">Meeting Link:</label>
+            <input type="url" id="meetingLink" name="meetingLink" placeholder="Enter Zoom or Google Meet link" required>
+
+            <button type="submit">Create Link</button>
+        </form>
+    </div>
+</body>
+{% endblock mainbody %}
+</html>

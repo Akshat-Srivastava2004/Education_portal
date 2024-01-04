@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block mainbody %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+<body>
+	
+    <div class ="row">
+		<form  action= "{% url 'login' %}" method="post">
+			{% csrf_token %}
+	
+    <center>
+        <div class="col-md-6 mx-auto p-0">
+            <div class="card">
+   <div class="login-box">
+        <div class="login-snip">
+			{% for message in messages %}
+			<div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+						<strong>{{message}}</strong>
+					  </div>
+						{% endfor %}
+						<br>
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+            <div class="login-space">
+                <div class="login">
+                    <div class="group">
+                        <label for="user" class="label">username</label>
+                        <input type="text" name="username" class="input" placeholder="Create your Username">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Password</label>
+                        <input  type="password" class="input"  name="pwd" data-type="password" placeholder="Enter your password">
+                    </div>
+                    <div class="group">
+                        <input id="check" type="checkbox" class="check" checked>
+                        <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Sign In">
+                    </div>
+                    <div class="hr"></div>
+                    <div class="foot">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+				</form>
+                </div>
+			
+				
+                <div class="sign-up-form">
+					<form action="{% url 'register' %}" method="post">
+						{% csrf_token %}
+                        <div class="group">
+                            <label for="user" class="label">username</label>
+                            <input type="text" name="username" class="input" placeholder="Create your Username">
+                        </div>
+                    <div class="group">
+                        <label for="user" class="label">First_name</label>
+                        <input type="text" name="fn" class="input" placeholder="Enter your first name ">
+                    </div>
+                    <div class="group">
+                        <label for="user" class="label">last_names</label>
+                        <input type="text" name="ln" class="input" placeholder="Create your Username">
+                    </div>
+                    <div class="group">
+                        <label for="user" class="label">course</label>
+                        <input type="course" name="cs" class="input" placeholder="Create your Username">
+                    </div>
+                    <div class="group">
+                        <label for="user" class="label">address</label>
+                        <input  type="text" name="ad" class="input" placeholder="Create your Username">
+                    </div>
+                    <div class="group">
+                        <label for="user" class="label">phonenumber</label>
+                        <input  type="tel" name="pn" class="input" placeholder="Create your Username">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Password</label>
+                        <input  type="password" name="pwd" class="input" data-type="password" placeholder="Create your password">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Email Address</label>
+                        <input  type="email"   name="el" class="input" placeholder="Enter your email address">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Repeat Password</label>
+                        <input  type="password" name="password_repeat" class="input" data-type="password_repeat" placeholder="Repeat your password" >
+                    </div>
+                    
+                    <div class="group">
+                        <input type="submit" class="button" value="Sign Up">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+    </div>
+    </div>
+</form>
+    </div>
+
+</center>
+{% endblock mainbody %}
+</body>
+</html>
