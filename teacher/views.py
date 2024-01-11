@@ -45,3 +45,7 @@ def recorded_session(request):
 @login_required(login_url="teacher/login")
 def teacher_profile(request):
     return render(request,'teacher/teacher_profile.html')
+
+def teacher_logout(request):
+    auth.logout(request)
+    return redirect("teacher/login")

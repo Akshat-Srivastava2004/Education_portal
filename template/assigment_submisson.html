@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block mainbody %}
+<style>
+   body {
+       font-family: Arial, sans-serif;
+       background-color: #f4f4f4;
+       margin: 0;
+       padding: 0;
+   }
+   .container {
+       max-width: 1200px;
+       margin-left: 300px;
+       background-color: #fff;
+       border-radius: 10px;
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+       padding: 20px;
+   }
+
+   table {
+       width: 100%;
+       border-collapse: collapse;
+       margin-top: 20px;
+       background-color: #f9f9f9;
+       border-radius: 8px;
+       overflow: hidden;
+      
+   }
+
+   td {
+       padding: 16px;
+       border-bottom: 1px solid #ddd;
+       
+       
+   }
+
+   label {
+       display: block;
+       margin-bottom: 8px;
+       color: #333;
+       font-weight: bold;
+       
+   }
+
+   input, button, select {
+       width: 70%;
+       padding: 1px;
+       box-sizing: border-box;
+       font-size: 16px;
+       margin-bottom: 12px;
+       border: 2px solid #cccccc;
+       border-radius: 4px;
+   }
+
+   button {
+       background-color: #4caf50;
+       color: #fff;
+       border: none;
+       border-radius: 4px;
+       cursor: pointer;
+       transition: background-color 0.3s;
+   }
+
+   button:hover {
+       background-color: #45a049;
+   }
+
+   h1 {
+       text-align: center;
+       color: #333;
+   }
+</style>
+<body>
+   
+   <div class="container">
+      <h1>Assignment Submission Schedule</h1>
+     
+      <form action="#" method="post" enctype="multipart/form-data">
+        {% for note in student_profile%}
+          <table>
+              <tr>
+                  <td><label for="name">Your Name:</label></td>
+                  <td id="studentName">{{note.first_name}}</td>
+                  <td><label for="title">Assignment Title:</label></td>
+                  <td id="assignmentTitle"></td>
+                  <td><label for="file">Upload Assignment</label></td>
+                  <td><input type="file" id="file" name="file" accept=".pdf, .doc, .docx, .txt" required></td>
+                  <td><button type="submit">Submit Assignment</button></td>
+              </tr>
+          </table>
+          {% endfor %}
+      </form>
+      
+  </div>
+</body>
+{% endblock mainbody %}
+</html>

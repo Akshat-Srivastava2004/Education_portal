@@ -10,4 +10,5 @@ urlpatterns = [
    path('teacher/anonymous_message',views.anonymous_message,name='teacher/anonymous_message'),
    path('teacher/recorded_session',views.recorded_session,name='teacher/recorded_session'),
    path('teacher/teacher_profile',views.teacher_profile,name='teacher/teacher_profile'),
+   path('teacher/logout',views.teacher_logout,name='teacher/teacher_logout'),
 ]

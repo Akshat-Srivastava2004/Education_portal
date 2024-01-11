@@ -20,6 +20,7 @@
   <link href="{% static 'css/now-ui-dashboard.css' %}" rel='stylesheet'/>
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{% static 'css/demo.css' %}" rel='stylesheet'/>
+  <link href="{% static 'css/theme.css' %}" rel='stylesheet'/>
 </head>
 
 <body class="">
@@ -44,9 +45,9 @@
             </a>
           </li>
           <li>
-            <a href="{% url 'course' %}">
+            <a href="{% url 'assigment_submisson' %}">
               <i class="now-ui-icons education_atom"></i>
-              <p> View Courses </p>
+              <p> assigment_submisson </p>
             </a>
           </li>
           <li>
@@ -79,12 +80,6 @@
               <p>My profile</p>
             </a>
           </li>
-          <li>
-            <a href="{% url 'login' %}">
-              <i class="now-ui-icons text_caps-small"></i>
-              <p>Student_login</p>
-            </a>
-          </li>
            <li>
             <a href="{% url 'login' %}">
               <i class="now-ui-icons text_caps-small"></i>
@@ -97,9 +92,16 @@
               <p>Teacher_login</p>
             </a>
           </li>
+          <li>
+            <a href="{% url 'logout' %}">
+              <i class="now-ui-icons text_caps-small"></i>
+              <p>logout</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
+    <script src="{% static 'js/script.js'%}"></script>
     {% block mainbody %} 
     <!-- Your main content goes here -->
     {% endblock mainbody %}

@@ -7,6 +7,17 @@ from django.contrib.auth.decorators import login_required
 import random
 # Create your views here.
 @login_required(login_url="login")
+def assigment_submisson(request):
+    user=request.user
+    student_profile=Student_profile.objects.all()
+
+    paramerters={
+        "user":user,
+        "student_profile":student_profile
+    }
+    return render(request,'assigment_submisson.html',paramerters)
+
+@login_required(login_url="login")
 def course(request):
     return render(request,'course.html')
 

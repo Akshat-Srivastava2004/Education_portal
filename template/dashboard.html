@@ -20,8 +20,36 @@
   <link href="{% static 'css/now-ui-dashboard.css' %}" rel='stylesheet'/>
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{% static 'css/demo.css' %}" rel='stylesheet'/>
-</head>
+  <link href="{% static 'css/theme.css' %}" rel='stylesheet'/>
+  
+  <style>
+    .container01 {
+      margin-top: 2vh;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
 
+    .box {
+      text-align: center;
+      width: 400px;
+      height: 60vh;
+      padding: 10px;
+      border: 10px solid lightblue;
+      box-sizing: border-box;
+    }
+
+    .box img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0%;
+    }
+  </style>
+  
+</head>
+<body>
 <body class="">
   <div class="wrapper ">
     <div class="sidebar" data-color="blue">
@@ -34,7 +62,10 @@
         </a>
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
           Education Portal
+          
       </div>
+     
+
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
           <li class="active ">
@@ -43,10 +74,11 @@
               <p>Dashboard</p>
             </a>
           </li>
+         
           <li>
-            <a href="{% url 'course' %}">
+            <a href="{% url 'assigment_submisson' %}">
               <i class="now-ui-icons education_atom"></i>
-              <p> View Courses </p>
+              <p> assigment_submisson </p>
             </a>
           </li>
           <li>
@@ -96,12 +128,12 @@
               <i class="now-ui-icons text_caps-small"></i>
               <p>logout</p>
             </a>
-          </li>
         </ul>
       </div>
     </div>
     <div class="main-panel" id="main-panel">
       <!-- Navbar -->
+      <!--
       <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
         <div class="container-fluid">
           <div class="navbar-wrapper">
@@ -163,96 +195,37 @@
             </ul>
           </div>
         </div>
-      </nav>
+      </nav>-->
       <!-- End Navbar -->
-      <div class="panel-header panel-header-lg">
-        <canvas id="bigDashboardChart"></canvas>
-      </div>
-      <div class="content">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="card card-chart">
-              <div class="card-header">
-                <h5 class="card-category">Global Sales</h5>
-                <h4 class="card-title">Shipped Products</h4>
-                <div class="dropdown">
-                  <button type="button" class="btn btn-round btn-outline-default dropdown-toggle btn-simple btn-icon no-caret" data-toggle="dropdown">
-                    <i class="now-ui-icons loader_gear"></i>
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    <a class="dropdown-item text-danger" href="#">Remove Data</a>
-                  </div>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="chart-area">
-                  <canvas id="lineChartExample"></canvas>
-                </div>
-              </div>
-              <div class="card-footer">
-                <div class="stats">
-                  <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="card card-chart">
-              <div class="card-header">
-                <h5 class="card-category">2018 Sales</h5>
-                <h4 class="card-title">All products</h4>
-                <div class="dropdown">
-                  <button type="button" class="btn btn-round btn-outline-default dropdown-toggle btn-simple btn-icon no-caret" data-toggle="dropdown">
-                    <i class="now-ui-icons loader_gear"></i>
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    <a class="dropdown-item text-danger" href="#">Remove Data</a>
-                  </div>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="chart-area">
-                  <canvas id="lineChartExampleWithNumbersAndGrid"></canvas>
-                </div>
-              </div>
-              <div class="card-footer">
-                <div class="stats">
-                  <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="card card-chart">
-              <div class="card-header">
-                <h5 class="card-category">Email Statistics</h5>
-                <h4 class="card-title">24 Hours Performance</h4>
-              </div>
-              <div class="card-body">
-                <div class="chart-area">
-                  <canvas id="barChartSimpleGradientsNumbers"></canvas>
-                </div>
-              </div>
-              <div class="card-footer">
-                <div class="stats">
-                  <i class="now-ui-icons ui-2_time-alarm"></i> Last 7 days
-                </div>
-              </div>
-            </div>
-          </div>
+    
+    <!--  <div class="panel-header panel-header-lg">-->
+        <img src="{% static 'img/educationimage.jpg' %}" alt="Your Image Alt Text" style="height: 70vh; width: 1280px;margin-bottom: 0px;">
+        <h2 style="color: rgb(30, 21, 21); margin-top: 2vh;"><i>"Empower Your Learning Journey with Our Diverse Course Offerings."</i></h2>
+
+        <div class="container01">
+        <div class="box">
+          <img src="{% static 'img/webd.jpg' %}" alt="Your Image Alt Text" style="height: 30h; width:900px; padding: 0px;">
+          <p>
+            Web development refers to the process of creating and maintaining websites or web applications for the internet. It involves tasks such as designing, coding, testing, and deploying interactive and functional content accessible through web browsers.</p>
         </div>
+      
+        <div class="box">
+          <img src="{% static 'img/appd.jpg' %}" alt="Your Image Alt Text" style="height: 50h; width:900px; padding: 0px;">
+          <p>App development involves creating software applications for mobile devices or desktops, encompassing design, programming, testing, and deployment for a specific platform or operating system. </p>
+        </div>
+      
+        <div class="box">
+          <img src="{% static 'img/DSA01.jpg' %}" alt="Your Image Alt Text" style="height: 50h; width:900px; padding: 0px;">
+          <br><br><br>
+          <p>DSA (Data Structures and Algorithms) development focuses on designing and implementing efficient and organized methods for storing and manipulating data, enhancing the performance</p>
+        </div>
+      </div>
         <div class="row">
           <div class="col-md-6">
             <div class="card  card-tasks">
               <div class="card-header ">
-                <h5 class="card-category">Backend development</h5>
-                <h4 class="card-title">Tasks</h4>
+                <h5 class="card-category"></h5>
+                <h4 class="card-title">Why should you choose our course?</h4>
               </div>
               <div class="card-body ">
                 <div class="table-full-width table-responsive">
@@ -261,58 +234,61 @@
                       <tr>
                         <td>
                           <div class="form-check">
+                            <!--
                             <label class="form-check-label">
                               <input class="form-check-input" type="checkbox" checked>
                               <span class="form-check-sign"></span>
-                            </label>
+                            </label>-->
                           </div>
                         </td>
-                        <td class="text-left">Sign contract for "What are conference organizers afraid of?"</td>
+                        <td class="text-left">Our courses cover a broad range of topics, providing a well-rounded education for diverse skill sets.</td>
                         <td class="td-actions text-right">
                           <button type="button" rel="tooltip" title="" class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Edit Task">
-                            <i class="now-ui-icons ui-2_settings-90"></i>
+                           
                           </button>
                           <button type="button" rel="tooltip" title="" class="btn btn-danger btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Remove">
-                            <i class="now-ui-icons ui-1_simple-remove"></i>
+                           
                           </button>
                         </td>
                       </tr>
                       <tr>
                         <td>
                           <div class="form-check">
+                            <!--
                             <label class="form-check-label">
                               <input class="form-check-input" type="checkbox">
                               <span class="form-check-sign"></span>
-                            </label>
+                            </label>-->
                           </div>
                         </td>
-                        <td class="text-left">Lines From Great Russian Literature? Or E-mails From My Boss?</td>
+                        <td class="text-left">Emphasis on practical exercises and real-world projects ensures an experiential understanding of the subject matter.</td>
                         <td class="td-actions text-right">
                           <button type="button" rel="tooltip" title="" class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Edit Task">
-                            <i class="now-ui-icons ui-2_settings-90"></i>
+                           
                           </button>
                           <button type="button" rel="tooltip" title="" class="btn btn-danger btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Remove">
-                            <i class="now-ui-icons ui-1_simple-remove"></i>
+                            
                           </button>
                         </td>
                       </tr>
                       <tr>
                         <td>
                           <div class="form-check">
+                            <!--
                             <label class="form-check-label">
                               <input class="form-check-input" type="checkbox" checked>
                               <span class="form-check-sign"></span>
-                            </label>
+                            </label>-->
                           </div>
                         </td>
-                        <td class="text-left">Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                        <td class="text-left"> Regular updates keep our curriculum aligned with the latest industry trends, offering knowledge that's timely and applicable.
                         </td>
                         <td class="td-actions text-right">
                           <button type="button" rel="tooltip" title="" class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Edit Task">
-                            <i class="now-ui-icons ui-2_settings-90"></i>
+                            
                           </button>
                           <button type="button" rel="tooltip" title="" class="btn btn-danger btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Remove">
-                            <i class="now-ui-icons ui-1_simple-remove"></i>
+                           
                           </button>
                         </td>
                       </tr>
@@ -322,17 +298,15 @@
               </div>
               <div class="card-footer ">
                 <hr>
-                <div class="stats">
-                  <i class="now-ui-icons loader_refresh spin"></i> Updated 3 minutes ago
-                </div>
+                
               </div>
             </div>
           </div>
           <div class="col-md-6">
             <div class="card">
               <div class="card-header">
-                <h5 class="card-category">All Persons List</h5>
-                <h4 class="card-title"> Employees Stats</h4>
+                
+                <h4 class="card-title"> know about yours mentors</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -348,80 +322,53 @@
                         City
                       </th>
                       <th class="text-right">
-                        Salary
+                        subject
                       </th>
                     </thead>
                     <tbody>
                       <tr>
                         <td>
-                          Dakota Rice
+                          Divyanshu
                         </td>
                         <td>
-                          Niger
+                          India
                         </td>
                         <td>
-                          Oud-Turnhout
+                          Agra
                         </td>
                         <td class="text-right">
-                          $36,738
+                          Web Development
                         </td>
                       </tr>
                       <tr>
                         <td>
-                          Minerva Hooper
+                         Naman Sharma
                         </td>
                         <td>
-                          Curaçao
+                          India
                         </td>
                         <td>
-                          Sinaai-Waas
+                          Mathura
                         </td>
                         <td class="text-right">
-                          $23,789
+                          DSA
                         </td>
                       </tr>
                       <tr>
                         <td>
-                          Sage Rodriguez
+                          Bhoomi Shakya
                         </td>
                         <td>
-                          Netherlands
+                          India
                         </td>
                         <td>
-                          Baileux
+                          Agra
                         </td>
                         <td class="text-right">
-                          $56,142
+                         App development
                         </td>
                       </tr>
-                      <tr>
-                        <td>
-                          Doris Greene
-                        </td>
-                        <td>
-                          Malawi
-                        </td>
-                        <td>
-                          Feldkirchen in Kärnten
-                        </td>
-                        <td class="text-right">
-                          $63,542
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Mason Porter
-                        </td>
-                        <td>
-                          Chile
-                        </td>
-                        <td>
-                          Gloucester
-                        </td>
-                        <td class="text-right">
-                          $78,615
-                        </td>
-                      </tr>
+                      
                     </tbody>
                   </table>
                 </div>
@@ -430,6 +377,7 @@
           </div>
         </div>
       </div>
+      <!--
       <footer class="footer">
         <div class=" container-fluid ">
           <nav>
@@ -450,17 +398,21 @@
                 </a>
               </li>
             </ul>
-          </nav>
+          </nav>-->
+          <!--
           <div class="copyright" id="copyright">
             &copy; <script>
               document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
             </script>, Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
           </div>
-        </div>
+        </div>-->
       </footer>
     </div>
   </div>
   <!--   Core JS Files   -->
+  <!-- ... other HTML content ... -->
+<script src="{% static 'js/script.js'%}"></script>
+
   <script src="{% static 'js/query.min.js'%}"></script>
   <script src="{% static 'js/popper.min.js'%}"></script>
   <script src="{% static 'js/bootstrap.min.js'%}"></script>
@@ -474,14 +426,6 @@
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{% static 'js/now-ui-dashboard.min.js?v=1.5.0'%}"></script>
   <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
-  <script src="{% static 'js/demo.js'%}"></script>
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
-      demo.initDashboardPageCharts();
 
-    });
-  </script>
 </body>
-
 </html>

@@ -1,8 +1,76 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block mainbody %}
-<body>
-    <center><h1>hello welcome to the student portal </h1></center> 
- </body>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        color: #333;
+    }
+    
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+        text-align: center;
+        color: #3498db;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    
+    th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+    }
+    
+    th {
+        background-color: #3498db;
+        color: #fff;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #3498db;
+    }
+    
+</style>
+<body class="light-theme">
+    <div class="container">
+        <h1>Recorded Sessions</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Class Topic</th>
+                    <th>Teacher</th>
+                    <th>Date</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example Session -->
+                <tr>
+                    <td>Introduction to Web Development</td>
+                    <td>John Doe</td>
+                    <td>2024-01-08</td>
+                    <td><a href="https://example.com/web-development-intro" target="_blank">Watch Session</a></td>
+                </tr>
+                <!-- Add more sessions as needed -->
+            </tbody>
+        </table>
+    </div>
+</body>
 {% endblock mainbody %}
 </html>
